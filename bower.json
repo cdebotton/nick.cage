@@ -34,6 +34,7 @@
     "tests"
   ],
   "devDependencies": {
-    "emblem.js": "~0.3.11"
+    "emblem.js": "~0.3.11",
+    "ember-mocha-adapter": "~0.1.2"
   }
 }

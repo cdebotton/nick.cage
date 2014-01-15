@@ -1,1 +1,2 @@
-p Index Template
+ul
+  each content: li #{this}
