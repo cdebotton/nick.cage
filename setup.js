@@ -33,6 +33,10 @@ var curl  = function(params, callback) {
   return run.call(this, 'curl', params, callback);
 };
 
+var cp = function(params, callback) {
+  return run.call(this, 'cp -r', params, callback);
+};
+
 var DIST_URLS = {
   EMBER: 'http://builds.emberjs.com/release/ember.js',
   EMBER_DATA: 'http://builds.emberjs.com.s3.amazonaws.com/ember-data-latest.js',
@@ -48,11 +52,7 @@ switch(mode) {
     .then(function() {
       return curl(DIST_URLS.HANDLEBARS + ' > vendor/javascripts/handlebars.js');
     });
-
-    // Copy font-awesome assets.
-    // run('cp -r ./bower_components/font-awesome/fonts', './app/assets/fonts')
-    //   .then(function() {
-    //     console.log('Fonts copied to assets.');
-    //   });
+     cp('./bower_components/font-awesome/fonts ./app/assets/fonts')
+     .then(function() { console.log('Vendor assets have been built.');  });
     break;
 }
