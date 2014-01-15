@@ -17,7 +17,6 @@
     "uglify-js-brunch": ">= 1.0 < 1.8",
     "clean-css-brunch": ">= 1.0 < 1.8",
     "auto-reload-brunch": ">= 1.0 < 1.8",
-    "ember-handlebars-brunch": "~1.2.0",
     "stylus-brunch": "~1.8.0",
     "emblem-brunch": "~0.1.1"
   },
@@ -35,7 +34,6 @@
     "mocha": "~1.17.0",
     "karma-mocha": "~0.1.1",
     "karma-chai": "0.0.2",
-    "deferred": "~0.6.8",
-    "grunt": "~0.4.2"
+    "deferred": "~0.6.8"
   }
 }

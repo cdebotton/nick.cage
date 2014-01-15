@@ -1,16 +1,39 @@
 {
-  "name": "your-app",
+  "name": "gojira",
   "version": "0.0.1",
   "main": "public/app.js",
   "dependencies": {
-    "ember.js": "~1.3.1",
-    "data": "git@github.com:emberjs/data#~1.0.0-beta.5",
     "jquery": "~2.0.3",
-    "handlebars.js": "~1.3.0",
     "font-awesome": "~4.0.3",
-    "normalize-css": "~2.1.3"
+    "normalize-css": "~2.1.3",
+    "modernizr": "~2.7.1",
+    "console-polyfill": "~0.1.0"
   },
   "overrides": {
-
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css"
+      ]
+    },
+    "modernizr": {
+      "main": [
+        "modernizr.js"
+      ]
+    }
+  },
+  "authors": [
+    "Christian de Botton <debotton@brooklynunited.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "emblem.js": "~0.3.11"
   }
 }

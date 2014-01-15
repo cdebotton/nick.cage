@@ -1,0 +1,10 @@
+{
+  "name": "template",
+  "files": [
+    {
+      "from": "template.emblem.hbs",
+      "to": "app/templates/{{name}}.emblem"
+    }
+  ],
+  "dependencies": []
+}

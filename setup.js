@@ -29,39 +29,30 @@ var run = function(path, params, callback) {
   return def.promise;
 };
 
+var curl  = function(params, callback) {
+  return run.call(this, 'curl', params, callback);
+};
+
+var DIST_URLS = {
+  EMBER: 'http://builds.emberjs.com/release/ember.js',
+  EMBER_DATA: 'http://builds.emberjs.com.s3.amazonaws.com/ember-data-latest.js',
+  HANDLEBARS: 'http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-latest.js'
+}
+
 switch(mode) {
   case 'build:vendor':
-    // Build handlebars.
-    run('cd ./bower_components/handlebars.js;', ' npm install;')
-      .then(function() {
-        return run('cd ./bower_components/handlebars.js;', 'grunt build;');
-      })
-      .then(function() {
-        console.log('Handlebars.js successfully built.');
-      })
-    // Build ember.
-      .then(function() {
-        return run('cd ./bower_components/ember.js;', 'bundle install;');
-      })
-      .then(function() {
-        return run('cd ./bower_components/ember.js;', 'npm install;');
-      })
-      .then(function() {
-        return run('cd ./bower_components/ember.js;', 'rake dist;');
-      })
-    // Build ember-data.
-      .then(function() {
-        return run('cd ./bower_components/data;', 'bundle;');
-      })
-      .then(function() {
-        return run('cd ./bower_components/data;', 'npm install;');
-      })
-      .then(function() {
-        return run('cd ./bower_components/data;', 'rake dist;');
-      })
+    curl(DIST_URLS.EMBER + ' > vendor/javascripts/ember.js')
+    .then(function() {
+      return curl(DIST_URLS.EMBER_DATA + ' > vendor/javascripts/ember-data.js');
+    })
+    .then(function() {
+      return curl(DIST_URLS.HANDLEBARS + ' > vendor/javascripts/handlebars.js');
+    });
+
     // Copy font-awesome assets.
-      .then(function() {
-        return run('cp -r ./bower_components/font-awesome/fonts', './app/assets/fonts');
-      });
+    // run('cp -r ./bower_components/font-awesome/fonts', './app/assets/fonts')
+    //   .then(function() {
+    //     console.log('Fonts copied to assets.');
+    //   });
     break;
 }
