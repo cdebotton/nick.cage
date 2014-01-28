@@ -46,6 +46,7 @@
   ],
   "devDependencies": {
     "emblem.js": "~0.3.11",
-    "ember-mocha-adapter": "~0.1.2"
+    "ember-mocha-adapter": "~0.1.2",
+    "sinonjs": "~1.7.3"
   }
 }

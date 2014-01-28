@@ -2,8 +2,8 @@
   "name": "template",
   "files": [
     {
-      "from": "template.emblem.hbs",
-      "to": "app/templates/{{name}}.emblem"
+      "from": "template.hbs.hbs",
+      "to": "app/templates/{{name}}.hbs"
     }
   ],
   "dependencies": []

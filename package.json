@@ -34,6 +34,10 @@
     "mocha": "~1.17.0",
     "karma-mocha": "~0.1.1",
     "karma-chai": "0.0.2",
-    "deferred": "~0.6.8"
+    "deferred": "~0.6.8",
+    "karma-mocha-reporter": "~0.2.0",
+    "chai": "~1.8.1",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.5.0"
   }
 }

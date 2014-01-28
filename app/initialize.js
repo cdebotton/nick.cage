@@ -5,7 +5,7 @@ require('config/router');
 require('config/store');
 
 var folderOrder = [
-    'initializers', 'mixins', 'routes', 'models',
+    'lib', 'initializers', 'mixins', 'routes', 'models',
     'views', 'controllers', 'helpers',
     'templates', 'components'
   ];
@@ -16,4 +16,8 @@ folderOrder.forEach(function(folder) {
   }).forEach(function(module) {
     require(module);
   });
+});
+
+App.Auth = Em.Auth.extend({
+
 });

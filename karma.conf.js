@@ -7,12 +7,14 @@ module.exports = function(config) {
     files: [
       'public/javascripts/vendor.js',
       'bower_components/ember-mocha-adapter/adapter.js',
+      'bower_components/sinonjs/sinon.js',
+      'node_modules/sinon-chai/lib/sinon-chai.js',
       'public/javascripts/app.js',
       'test/helpers.coffee',
       'test/**/*Test.coffee'
     ],
     exclude: [],
-    reporters: ['progress'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -24,7 +26,8 @@ module.exports = function(config) {
       'karma-mocha',
       'karma-chai',
       'karma-coffee-preprocessor',
-      'karma-phantomjs-launcher'
+      'karma-phantomjs-launcher',
+      'karma-mocha-reporter'
     ],
     preprocessors: {
       "**/*.coffee": "coffee"
